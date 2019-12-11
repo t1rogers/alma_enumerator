@@ -343,6 +343,16 @@ def has_leading_zero(_input):
 def has_pagination(_input):
     pagination_p = re.compile(r'^pp', re.IGNORECASE)
     return pagination_p.match(_input)
+  
+# added to add supplement information ()
+def has_supplement(_input):
+    supplement_p = re.compile('+ suppl.', re.IGNORECASE)
+    return supplement_p.match(_input)
+
+# added to add index information
+def has_index(_input):
+    index_p = re.compile('+ index', re.IGNORECASE)
+    return index_p.match(_input)
 
 
 def handle_record_error(item, item_info):
